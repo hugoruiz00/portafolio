@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/project_style.css">
+    <link rel="shortcut icon" href="../profile.ico" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/3871c6b6e2.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+    <title>Hugo Ruiz</title>
+</head>
+
+<body>
+    <div class="project_header">
+        <div class="info">
+            <h1 class="name">
+                Sistema de rastreo
+            </h1>
+            <div class="tecnologies tecnologies_rastreo">
+                <p>Python</p>
+                <p>Angular</p>
+                <p>Firebase</p>
+                <p>OpenStreetMap</p>
+                <p>PubNub</p>
+            </div>
+        </div>
+        <div class="back">
+            <a href="javascript:history.back()" class="back"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </div>
+
+    <div class="project_body project_body_rastreo">
+        <img src="../img/rastreador_dispositivo.jpeg" alt="Sistema de rastreo">
+        <div class="description">
+            <p>Este proyecto consiste en un sistema de rastreo compuesto por un dispositivo Raspberry Pi 3, un hardware GPS y una aplicación web.
+            </p>
+            <p>El hardware GPS captura las coordenadas y al estar conectada a la Raspberry Pi las recibe y procesa con un programa en Python para ser enviado cada cierto tiempo hacia el servicio de PubNub que maneja datos en tiempo real recibiendo y enviando
+                nuevamente dichos datos.</p>
+            <a target="_blank" href="https://github.com/hugoruiz00/sistema_rastreo_backend" class="repository">Repositorio</a>
+        </div>
+    </div>
+    <div class="project_body project_body_rastreo">
+        <img src="../img/rastreador_mapa.jpeg" alt="Sistema de rastreo">
+        <div class="description">
+            <p>El receptor es la aplicación web construida con Angular, esta aplicación recibe los datos que el servicio PubNub envía y los muestra en tiempo real en un mapa gracias al servicio de OpenStreetMap.</p>
+            <a target="_blank" href="https://github.com/hugoruiz00/sistema_rastreo_frontend" class="repository">Repositorio</a>
+        </div>
+    </div>
+    <div class="project_body project_body_rastreo">
+        <img src="../img/rastreador_marcador.jpeg" alt="Sistema de rastreo">
+        <div class="description">
+            <p>En la aplicación se puede colocar un marcador en el mapa que delimitará un área circular, en el momento en que el objeto rastreado salga de esa área delimitada se registrará inmediatamente la ubicación en una base de datos de Firebase con
+                la fecha y hora que ocurrió.</p>
+        </div>
+    </div>
+</body>
+
+</html>

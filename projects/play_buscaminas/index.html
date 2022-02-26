@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buscaminas</title>
+    <style>
+        .attributeTh {
+            background-color: gray;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .attribTable {
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        
+        .attribImg {
+            width: 60px;
+            height: 60px;
+            vertical-align: bottom;
+        }
+        
+        .imagenClick {
+            width: 40px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body style="background-color:rgb(185, 194, 194)">
+
+    <div id="element"></div>
+    <h3 style="color: rgb(56, 54, 54); text-align: center; font-size: 28px">Buscamina</h3>
+    <fieldset id="fieldset" style="background-color:gray">
+        <legend style="font-size: 20px">Elige el tamaño</legend>
+        <label>
+            <input type="radio" id="r1" name="color" value="4" checked> 4
+        </label>
+        <label>
+            <input type="radio" id="r2" name="color" value="8"> 8
+        </label>
+        <label>
+            <input type="radio" id="r3" name="color" value="12"> 12
+        </label>
+        <input type="button" value="Aceptar" id="add" onclick="getValue()" style="margin-left:37%; border-color: black;background-color: rgb(85, 180, 180);border-radius: 10px; width: 110px;height: 37px; color: black">
+        <input type="button" value="Iniciar" id="iniciar" onclick="iniciar()" style="visibility: hidden;;margin-left:46%; border-color: black;background-color: rgb(84, 192, 192);border-radius: 10px; width: 110px;height: 37px; color: black">
+        <input type="button" value="Nueva partida" id="reintento" onclick="prueba()" style="margin-left: 90%;  bottom: 50%; border-color: black;background-color: rgb(190, 45, 26);border-radius: 40px; width: 120px;height: 40px; color: black">
+
+        <!-- <input type="button" value="Prueba" id="reintento" onclick="pro()"
+            style="margin-left: 90%;  bottom: 50%; border-color: black;background-color: rgb(190, 45, 26);border-radius: 40px; width: 120px;height: 40px; color: black">
+    -->
+
+        <div class="chronometer">
+            <div id="screen">00 : 00 : 00 : 00</div>
+
+        </div>
+
+    </fieldset>
+    <p style="margin-left: 85%">Aciertos: <input type="text" id="aciertos" style="text-align: center;color: white; margin-top: 20px; width: 100px; height: 30px; 
+                font-family:'Times New Roman', Times, serif; background-color: gray; ">
+    </p>
+
+</body>
+<script>
+    var idImg = 0;
+    var tamanio;
+    var aciert = 0;
+    var segundos = 0;
+
+    function getValue() {
+        if (document.getElementById('r1').checked) {
+            tamanio = document.getElementById('r1').value;
+            document.getElementById('r2').disabled = true;
+            document.getElementById('r3').disabled = true;
+        } else if (document.getElementById('r2').checked) {
+            tamanio = document.getElementById('r2').value;
+            document.getElementById('r1').disabled = true;
+            document.getElementById('r3').disabled = true;
+        } else if (document.getElementById('r3').checked) {
+            tamanio = document.getElementById('r3').value;
+            document.getElementById('r1').disabled = true;
+            document.getElementById('r2').disabled = true;
+        }
+        document.getElementById('add').style.visibility = 'hidden';
+        document.getElementById('iniciar').style.visibility = 'visible';
+        console.log(tamanio);
+        var table = document.createElement('table');
+        table.border = 0;
+        for (let index = 0; index < tamanio; index++) {
+            var tr = document.createElement('tr');
+            for (let j = 0; j < tamanio; j++) {
+                var image = document.createElement("img");
+                image.src = "gris.jpg";
+                image.setAttribute('class', 'attribImg');
+                image.id = idImg++;
+                //image.onclick = clicks;
+                image.setAttribute('onclick', 'clicks(this)');
+                //image.addEventListener("click",clicks,true);
+                var th = document.createElement('th');
+                th.innerHTML = "";
+                th.appendChild(image);
+                th.setAttribute('class', 'attributeTh');
+                tr.appendChild(th);
+            }
+            table.appendChild(tr);
+        }
+        var caja = document.createElement("textarea");
+        //var text = document.createTextNode("Acertados");
+        //element.appendChild(table);
+        //var text = document.createTextNode("Hola Mundo");
+        table.setAttribute('class', 'attribTable');
+        document.body.appendChild(table);
+        bomba();
+    }
+
+    var init = 0;
+
+    function iniciar() {
+        init = 1;
+        start();
+        segundos = 0;
+    }
+
+    var arrayImagenes = new Array();
+    var acertados = [];
+    var posicionAcertados = 0;
+
+    function bomba() {
+        var i, numero;
+        cantidad = tamanio * tamanio;
+        for (i = 0; i < cantidad; i++) {
+            arrayImagenes[i] = "caris.png";
+        }
+        for (i = 0; i < cantidad / 4; i++) {
+            do {
+                numero = Math.floor(Math.random() * cantidad);
+            } while (arrayImagenes[numero] != "caris.png");
+            arrayImagenes[numero] = "bomba.jpg";
+        }
+    }
+
+    function clicks(image) {
+        if (1 == 0) {
+            alert("No ha iniciado el tiempo");
+        } else {
+            for (i = 0; i < tamanio * tamanio; i++) {
+                if (arrayImagenes[i] == "bomba.jpg") {
+                    console.log("posicion = " + i);
+                }
+            }
+            image.src = arrayImagenes[image.id];
+            ganadoPerdido(image);
+            //ganadoPerdido(image);
+            //document.getElementById(image.id).disabled = true;
+            //image.setAttribute('class','imagenClick');
+            //alert("Hola");
+        }
+    }
+
+    function pro() {
+        var text = document.createTextNode("Hola Mundo");
+        var im = document.getElementById('2');
+        im.appendChild(text);
+
+    }
+
+    function ganadoPerdido(image) {
+        if (arrayImagenes[image.id] == "bomba.jpg") {
+            stop();
+            init = 0;
+            sonido("audio/bomba.mp3");
+            for (i = 0; i < tamanio * tamanio; i++) {
+                if (arrayImagenes[i] == "bomba.jpg") {
+                    document.getElementById(i).src = "bomba.jpg";
+                }
+            }
+            window.setTimeout(function() {
+                alert("Oh no, ha perdido")
+            }, 200);
+            document.getElementById('aciertos').value = "";
+            window.setTimeout(function() {
+                reiniciarJuego()
+            }, 200);
+
+        } else {
+            var ban = 0;
+            for (let i = 0; i < acertados.length; i++) {
+                if (image.id == acertados[i]) {
+                    ban = 1;
+                }
+            }
+            if (ban == 0) {
+                sonido("audio/carita.mp3");
+                document.getElementById('aciertos').value = ++aciert + "/" + ((tamanio * tamanio) * .75);
+                acertados[posicionAcertados++] = image.id;
+            }
+            if (acertados.length == (tamanio * tamanio) * .75) {
+                init = 0;
+                sonido("audio/win.mp3");
+                window.setTimeout(function() {
+                    alert("Ha ganado con un tiempo de " + segundos)
+                }, 400);
+                document.getElementById('aciertos').value = "";
+                stop();
+                window.setTimeout(function() {
+                    reiniciarJuego()
+                }, 400);
+            }
+        }
+    }
+
+    function reiniciarJuego() {
+        for (let i = 0; i < tamanio * tamanio; i++) {
+            document.getElementById(i).src = "gris.jpg";
+        }
+        bomba();
+        reset();
+        acertados = [];
+        posicionAcertados = 0;
+        aciert = 0;
+    }
+
+    function prueba() {
+        location.reload();
+    }
+
+    window.onload = function() {
+        pantalla = document.getElementById("screen");
+    }
+    var isMarch = false;
+    var acumularTime = 0;
+
+    function start() {
+        if (isMarch == false) {
+            timeInicial = new Date();
+            control = setInterval(cronometro, 10);
+            isMarch = true;
+        }
+    }
+
+    function cronometro() {
+        timeActual = new Date();
+        acumularTime = timeActual - timeInicial;
+        acumularTime2 = new Date();
+        acumularTime2.setTime(acumularTime);
+        cc = Math.round(acumularTime2.getMilliseconds() / 10);
+        ss = acumularTime2.getSeconds();
+        mm = acumularTime2.getMinutes();
+        hh = acumularTime2.getHours() - 18;
+        if (cc < 10) {
+            cc = "0" + cc;
+        }
+        if (ss < 10) {
+            ss = "0" + ss;
+        }
+        if (mm < 10) {
+            mm = "0" + mm;
+        }
+        if (hh < 10) {
+            hh = "0" + hh;
+        }
+        pantalla.innerHTML = hh + " : " + mm + " : " + ss + " : " + cc;
+        segundos = mm + ":" + ss;
+    }
+
+    function stop() {
+        if (isMarch == true) {
+            clearInterval(control);
+            isMarch = false;
+        }
+    }
+
+    function resume() {
+        if (isMarch == false) {
+            timeActu2 = new Date();
+            timeActu2 = timeActu2.getTime();
+            acumularResume = timeActu2 - acumularTime;
+
+            timeInicial.setTime(acumularResume);
+            control = setInterval(cronometro, 10);
+            isMarch = true;
+        }
+    }
+
+    function reset() {
+        if (isMarch == true) {
+            clearInterval(control);
+            isMarch = false;
+        }
+        acumularTime = 0;
+        pantalla.innerHTML = "00 : 00 : 00 : 00";
+    }
+
+    /* window.addEventListener("load", function () {
+        document.getElementById("iniciar").addEventListener("click", sonarPajaros);
+        document.getElementById("stop").addEventListener("click", callarPajaros);
+    });*/
+    function sonido(nombre) {
+        var sonido = document.createElement("iframe");
+        sonido.setAttribute("src", nombre);
+        document.body.appendChild(sonido).style.visibility = 'hidden';
+        //document.getElementById("iniciar").removeEventListener("click", sonarPajaros);
+    }
+
+    /*function callarPajaros() {
+        var iframe = document.getElementsByTagName("iframe");
+        if (iframe.length > 0) {
+            iframe[0].parentNode.removeChild(iframe[0]);
+            document.getElementById("play").addEventListener("click", sonarPajaros);
+        }
+    }*/
+</script>
+
+</html>

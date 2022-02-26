@@ -1,0 +1,202 @@
+* {
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #212121;
+}
+
+.project_header {
+    height: 200px;
+    background-color: #313030;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project_header .info {
+    padding-top: 10vh;
+    padding-left: 150px;
+    color: #fff;
+}
+
+.project_header .info .tecnologies {
+    margin-top: 20px;
+    display: flex;
+}
+
+.project_header .info .tecnologies p {
+    margin-right: 17px;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.project_header .back {
+    margin-top: 13vh;
+    margin-right: 100px;
+}
+
+.project_header .back a {
+    background-color: rgb(168, 57, 57);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 25px;
+}
+
+.project_header .back a i {
+    transition-duration: 0.7s;
+}
+
+.project_header .back a:hover i {
+    transform: translateX(-6px);
+}
+
+.project_body {
+    background-color: #313030;
+    margin: 50px 100px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.project_body img {
+    height: 100%;
+}
+
+.project_body .description {
+    padding: 0 40px;
+}
+
+.project_body .description p {
+    text-align: justify;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.project_body .description .view_app {
+    font-size: 15px;
+}
+
+.project_body .description a {
+    margin-top: 27px;
+    margin-right: 30px;
+    height: 35px;
+    width: 140px;
+    padding: 8px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+}
+
+.project_body .description .repository {
+    background-color: #388146;
+}
+
+.project_body .description .repository:hover {
+    background-color: #2da744;
+}
+
+
+/* Chem Organizer style */
+
+.project_header .info .tecnologies_chem p {
+    background-color: #852D91;
+}
+
+.project_body .description .visualize_chem {
+    background-color: #852D91;
+}
+
+.project_body .description .visualize_chem:hover {
+    background-color: #be1cd3;
+}
+
+
+/* Contacts QR style */
+
+.project_header .info .tecnologies_contacts p {
+    background-color: #1564C0;
+}
+
+.project_body .description .visualize_contacts {
+    background-color: #1564C0;
+}
+
+.project_body .description .visualize_contacts:hover {
+    background-color: #1783ff;
+}
+
+
+/* Pet Care style */
+
+.project_header .info .tecnologies_pet p {
+    background-color: #3F3D56;
+}
+
+
+/* Buscaminas style */
+
+.project_header .info .tecnologies_buscaminas p {
+    background-color: #808080;
+}
+
+.project_body .description .visualize_buscaminas {
+    background-color: #808080;
+}
+
+.project_body .description .visualize_buscaminas:hover {
+    background-color: #635e5e;
+}
+
+.project_body_buscaminas img {
+    width: 63%;
+}
+
+
+/* Elihu style */
+
+.project_header .info .tecnologies_elihu p {
+    background-color: #314252;
+}
+
+.project_body_elihu img {
+    width: 63%;
+}
+
+
+/* Clasificador style */
+
+.project_header .info .tecnologies_clasificador p {
+    background-color: #ACAFAF;
+}
+
+.project_body_clasificador img {
+    width: 63%;
+}
+
+
+/* Sistema de rastreo style */
+
+.project_header .info .tecnologies_rastreo p {
+    background-color: #353A40;
+}
+
+.project_body_rastreo img {
+    width: 63%;
+}
+
+
+/* Gestor BD style */
+
+.project_header .info .tecnologies_gestor p {
+    background-color: #2C44CC;
+}
+
+.project_body_gestor {
+    height: 420px;
+}
