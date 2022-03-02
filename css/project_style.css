@@ -10,33 +10,35 @@ body {
 }
 
 .project_header {
-    height: 200px;
     background-color: #313030;
     display: flex;
     justify-content: space-between;
 }
 
 .project_header .info {
-    padding-top: 10vh;
-    padding-left: 150px;
+    padding-top: 5%;
+    padding-left: 11%;
     color: #fff;
+    padding-bottom: 3%;
 }
 
 .project_header .info .tecnologies {
-    margin-top: 20px;
+    margin-top: 8%;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .project_header .info .tecnologies p {
     margin-right: 17px;
     padding: 2px 12px;
+    margin-bottom: 3%;
     border-radius: 20px;
     font-size: 14px;
 }
 
 .project_header .back {
-    margin-top: 13vh;
-    margin-right: 100px;
+    margin-top: 7%;
+    margin-right: 10%;
 }
 
 .project_header .back a {
@@ -56,18 +58,14 @@ body {
 
 .project_body {
     background-color: #313030;
-    margin: 50px 100px;
-    height: 500px;
+    margin: 4% 7%;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.project_body img {
-    height: 100%;
-}
-
 .project_body .description {
-    padding: 0 40px;
+    padding: 2% 3.5%;
 }
 
 .project_body .description p {
@@ -81,7 +79,7 @@ body {
 }
 
 .project_body .description a {
-    margin-top: 27px;
+    margin-top: 3%;
     margin-right: 30px;
     height: 35px;
     width: 140px;
@@ -108,6 +106,10 @@ body {
     background-color: #852D91;
 }
 
+.project_body_chem img {
+    height: 480px;
+}
+
 .project_body .description .visualize_chem {
     background-color: #852D91;
 }
@@ -123,6 +125,10 @@ body {
     background-color: #1564C0;
 }
 
+.project_body_contacts img {
+    height: 450px;
+}
+
 .project_body .description .visualize_contacts {
     background-color: #1564C0;
 }
@@ -136,6 +142,18 @@ body {
 
 .project_header .info .tecnologies_pet p {
     background-color: #3F3D56;
+}
+
+.project_body_pet_row-1 img {
+    height: 450px;
+}
+
+.project_body_pet_row-2 .description_pet_down {
+    display: none;
+}
+
+.project_body_pet_row-2 img {
+    height: 480px;
 }
 
 
@@ -154,7 +172,7 @@ body {
 }
 
 .project_body_buscaminas img {
-    width: 63%;
+    height: 340px;
 }
 
 
@@ -187,7 +205,7 @@ body {
 }
 
 .project_body_rastreo img {
-    width: 63%;
+    width: 50%;
 }
 
 
@@ -197,6 +215,204 @@ body {
     background-color: #2C44CC;
 }
 
-.project_body_gestor {
-    height: 420px;
+.project_body_gestor .login {
+    width: 45%;
+}
+
+.project_body_gestor img {
+    width: 60%;
+}
+
+
+/*Responsive design*/
+
+@media screen and (max-width:1100px) {
+    .project_body_pet_row-1,
+    .project_body_buscaminas,
+    .project_body_elihu,
+    .project_body_clasificador {
+        flex-wrap: wrap;
+    }
+    .project_body_pet_row-1 img {
+        width: 60%;
+        height: auto;
+    }
+    .project_body_buscaminas img {
+        width: 80%;
+        height: auto;
+    }
+    .project_body_elihu img {
+        width: 65%;
+        height: auto;
+    }
+    .project_body_clasificador img {
+        width: 70%;
+        height: auto;
+    }
+    .project_body_buscaminas .description,
+    .project_body_elihu .description,
+    .project_body_clasificador .description {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .project_body_rastreo {
+        flex-wrap: wrap;
+    }
+    .project_body_rastreo {
+        text-align: center;
+    }
+    .project_body_rastreo .map {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .project_body .description {
+        text-align: center;
+    }
+    .project_body_pet_row-1 img {
+        width: 80%;
+        height: auto;
+    }
+    .project_body_pet_row-2 {
+        flex-wrap: wrap;
+    }
+    .project_body_pet_row-2 .description_pet {
+        display: none;
+    }
+    .project_body_pet_row-2 .description_pet_down {
+        display: block;
+    }
+    .project_body_pet_row-2 .left_image {
+        width: 35%;
+        height: auto;
+        margin: 0 5%;
+    }
+    .project_body_pet_row-2 .right_image {
+        width: 39%;
+        height: auto;
+        margin: 0 5%;
+    }
+    .project_body_buscaminas img {
+        width: 90%;
+    }
+    .project_body_elihu img {
+        width: 80%;
+    }
+    .project_body_clasificador img {
+        width: 85%;
+    }
+    .project_body_rastreo img {
+        width: 60%;
+    }
+    .project_body_rastreo .map {
+        width: 100%;
+    }
+    .project_body_gestor {
+        flex-wrap: wrap;
+    }
+    .project_body_gestor .login {
+        width: 55%;
+    }
+    .project_body_gestor img {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .project_header .back {
+        margin-right: 3%;
+    }
+    .project_body {
+        flex-wrap: wrap;
+    }
+    .project_body .description {
+        text-align: center;
+        padding: 4% 3.5%;
+    }
+    .project_body_chem img {
+        width: 70%;
+        height: auto;
+    }
+    .project_body_contacts img {
+        width: 70%;
+        height: auto;
+    }
+    .project_body_pet_row-1 img {
+        width: 100%;
+    }
+    .project_body_pet_row-2 .left_image {
+        width: 40%;
+        margin: 0;
+    }
+    .project_body_pet_row-2 .right_image {
+        width: 43.8%;
+        margin: 0;
+    }
+    .project_body_buscaminas img {
+        width: 100%;
+    }
+    .project_body_elihu img {
+        width: 100%;
+    }
+    .project_body_clasificador img {
+        width: 100%;
+    }
+    .project_body_rastreo img {
+        width: 85%;
+    }
+    .project_body_gestor .login {
+        width: 75%;
+    }
+    .project_body_gestor img {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:380px) {
+    .project_body {
+        margin: 4% 4%;
+    }
+    .project_body_chem img {
+        width: 80%;
+        height: auto;
+    }
+    .project_body_contacts img {
+        width: 85%;
+        height: auto;
+    }
+    .project_body_pet_row-1 img {
+        width: 90%;
+        height: auto;
+    }
+    .project_body_pet_row-2 .left_image {
+        width: 60%;
+        margin: 0;
+    }
+    .project_body_pet_row-2 .right_image {
+        width: 60%;
+        margin: 0;
+    }
+    .project_body_rastreo img {
+        width: 100%;
+    }
+    .project_body_gestor .login {
+        width: 100%;
+    }
+    .project_body_gestor img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .project_body_pet_row-2 .left_image {
+        width: 80%;
+        margin: 0;
+    }
+    .project_body_pet_row-2 .right_image {
+        width: 80%;
+        margin: 0;
+    }
 }

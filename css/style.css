@@ -47,7 +47,7 @@ body {
 
 .nav li a.active,
 .nav li a:hover {
-    color: #53A596;
+    color: #009175;
     font-weight: bold;
 }
 
@@ -72,13 +72,14 @@ body {
     height: 450px;
     background-color: #313030;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .main__about {
     margin-top: 20vh;
-    margin-left: 50px;
     text-align: center;
+    width: 38%;
 }
 
 .main__about .title {
@@ -88,32 +89,32 @@ body {
 }
 
 .main__about .career {
-    margin-top: 30px;
-    color: #53A596;
+    margin-top: 6%;
+    color: #009175;
     font-size: 30px;
 }
 
 .main__about .links i {
     color: #fff;
     font-size: 40px;
-    margin: 50px 20px 0 20px;
+    margin: 10% 20px 0 20px;
 }
 
 .main__about .links i:hover {
-    color: #53A596;
+    color: #009175;
 }
 
 .main__profile {
-    height: 300px;
-    width: 270px;
+    height: 350px;
+    width: 300px;
     border-radius: 70px 70px 0 0;
     box-shadow: 10px 10px #313030;
     position: relative;
-    top: 200px;
+    top: 160px;
 }
 
 .about {
-    margin-top: 20px;
+    margin-top: 2%;
     padding-top: 10vh;
 }
 
@@ -159,6 +160,11 @@ body {
     letter-spacing: 1px;
 }
 
+.education__content .date {
+    color: rgb(201, 201, 201);
+    font-size: 15px;
+}
+
 .experience {
     padding-top: 10vh;
 }
@@ -185,14 +191,14 @@ body {
     background-color: #313030;
     margin: 2% 1%;
     padding: 20px;
-    border-bottom: 2px solid #53A596;
+    border-bottom: 2px solid #009175;
 }
 
 .experience__content .title {
     text-align: center;
     padding: 5px 0;
     font-size: 20px;
-    color: #53A596;
+    color: #009175;
 }
 
 .experience__content .date {
@@ -221,6 +227,9 @@ body {
     text-align: center;
     line-height: 1.4;
     font-size: 17px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .projects__content .project {
@@ -251,14 +260,14 @@ body {
     border-radius: 20px;
     padding: 6px 12px;
     cursor: pointer;
-    border: 2px solid #53A596;
+    border: 2px solid #009175;
     color: #fff;
     background-color: #313030;
     text-decoration: none;
 }
 
 .projects__content .project .details a:hover {
-    background-color: #53A596;
+    background-color: #009175;
 }
 
 .projects__content .project:hover img {
@@ -271,47 +280,32 @@ body {
     transform: translateY(-140px);
 }
 
-.projects__content .first_section {
-    display: flex;
-}
-
-.projects__content .first_section .project {
+.projects__content .project {
     margin: 1%;
     background-color: #313030;
     height: 400px;
 }
 
-.projects__content .first_section .item-1,
-.projects__content .first_section .item-2 {
-    width: 20%;
+.projects__content .item-1,
+.projects__content .item-2 {
+    width: 18%;
 }
 
-.projects__content .first_section .item-3 {
-    width: 60%;
+.projects__content .item-3 {
+    width: 58%;
 }
 
-.projects__content .second_section {
-    display: flex;
-    justify-content: space-between;
-}
-
-.projects__content .second_section .project {
-    margin: 1%;
-    background-color: #313030;
+.projects__content .item-4,
+.projects__content .item-5 {
     height: 350px;
-    width: 50%;
+    width: 48%;
 }
 
-.projects__content .third_section {
-    display: flex;
-    justify-content: space-between;
-}
-
-.projects__content .third_section .project {
-    margin: 1%;
-    background-color: #313030;
+.projects__content .item-6,
+.projects__content .item-7,
+.projects__content .item-8 {
     height: 350px;
-    width: 33%;
+    width: 31.2%;
 }
 
 .skills {
@@ -328,6 +322,7 @@ body {
 .skills__content {
     color: #fff;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -335,11 +330,13 @@ body {
 .skills__content .side {
     margin: 0 4%;
     vertical-align: middle;
+    width: 25%;
 }
 
 .skills__content .center {
     margin: 0;
     vertical-align: middle;
+    width: 30%;
 }
 
 .skills__content .side p {
@@ -361,7 +358,7 @@ body {
 }
 
 .skills__content .center {
-    background-color: #53A596;
+    background-color: #009175;
     padding: 20px 11%;
     height: 270px;
 }
@@ -380,9 +377,8 @@ body {
 
 .contact__content {
     background-color: #313030;
-    margin: 0 350px;
-    padding: 30px 15px;
-    height: 320px;
+    margin: 0 26%;
+    padding: 30px 2%;
     text-align: center;
 }
 
@@ -402,14 +398,18 @@ body {
 
 .contact__content .send_email {
     display: block;
-    background-color: #53A596;
+    background-color: #009175;
     color: #fff;
     font-size: 16px;
     padding: 8px 0;
-    width: 250px;
+    width: 43%;
     text-decoration: none;
     border-radius: 15px;
     margin: 10px auto;
+}
+
+.contact__content .send_email:hover {
+    background-color: #4fc0ab;
 }
 
 .contact__content .links i {
@@ -419,41 +419,7 @@ body {
 }
 
 .contact__content .links i:hover {
-    color: #53A596;
-}
-
-
-/*Responsive design*/
-
-@media screen and (max-width:1024px) {
-    .nav__links {
-        padding: 0 3px 0 0;
-    }
-    .nav__links li {
-        margin: 0 7px;
-    }
-}
-
-@media screen and (max-width:768px) {
-    .nav__toggle {
-        display: block;
-    }
-    .nav__links {
-        padding: 20px;
-        background-color: #2e2e2e;
-        transition: all 0.5s ease;
-        width: 100%;
-        position: fixed;
-        right: 100%;
-        top: 9vh;
-    }
-    .nav__links li {
-        width: 100%;
-        margin-bottom: 40px;
-    }
-    .nav__links.open {
-        right: 0;
-    }
+    color: #009175;
 }
 
 
@@ -464,7 +430,7 @@ body {
     display: inline-block;
     cursor: pointer;
     margin-bottom: 30px;
-    color: #53A596;
+    color: #009175;
     font-weight: bold;
 }
 
@@ -515,5 +481,121 @@ body {
     }
     to {
         opacity: 1;
+    }
+}
+
+
+/*Responsive design*/
+
+@media screen and (max-width:1024px) {
+    .nav__links {
+        padding: 0 3px 0 0;
+    }
+    .nav__links li {
+        margin: 0 7px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .projects__content .item-1,
+    .projects__content .item-2 {
+        width: 25%;
+    }
+    .projects__content .item-3 {
+        width: 44%;
+    }
+    .skills__content .side {
+        padding: 20px 9%;
+    }
+    .skills__content .center {
+        padding: 20px 8%;
+    }
+    .contact__content {
+        margin: 0 13%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .nav__toggle {
+        display: block;
+    }
+    .nav__links {
+        padding: 20px;
+        background-color: #2e2e2e;
+        transition: all 0.5s ease;
+        width: 100%;
+        position: fixed;
+        right: 100%;
+        top: 9vh;
+    }
+    .nav__links li {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .nav__links.open {
+        right: 0;
+    }
+    .main__about {
+        width: 100%;
+        margin-top: 14vh;
+    }
+    .main__about .title {
+        font-size: 35px;
+    }
+    .main__about .career {
+        margin: 5px 0;
+        font-size: 25px;
+    }
+    .main__about .links i {
+        margin: 10px 9px;
+        font-size: 30px;
+    }
+    .main__profile {
+        top: 30px;
+        height: 220px;
+        width: 220px;
+    }
+    .experience__content .company {
+        width: 93%;
+        margin: 2% 0;
+    }
+    .projects__content .project {
+        width: 47%;
+        height: 350px;
+    }
+    .skills__content .center,
+    .skills__content .side {
+        padding: 20px 7%;
+        font-size: 15px;
+        letter-spacing: 0;
+    }
+    .contact__content {
+        margin: 0 11%;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .projects__content .project {
+        width: 95%;
+    }
+    .skills__content {
+        margin: 0 6%;
+    }
+    .skills__content .center,
+    .skills__content .side {
+        width: 33%;
+        margin: 10px 0;
+        height: 280px;
+    }
+    .contact__content {
+        margin: 0 6%;
+    }
+}
+
+@media screen and (max-width:410px) {
+    .skills__content .center,
+    .skills__content .side {
+        padding: 20px 1%;
+        font-size: 14px;
     }
 }
