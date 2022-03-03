@@ -7,6 +7,16 @@
 
 body {
     background-color: #212121;
+    animation: page_transition 1s;
+}
+
+@keyframes page_transition {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .project_header {
