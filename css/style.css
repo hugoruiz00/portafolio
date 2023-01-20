@@ -187,17 +187,13 @@ body {
 
 .experience__content {
     color: #fff;
-    margin: 0 2%;
+    margin: 0 5%;
     text-align: justify;
     line-height: 1.4;
     font-size: 17px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .experience__content .company {
-    width: 46%;
     background-color: #313030;
     margin: 2% 1%;
     padding: 20px;
@@ -218,6 +214,7 @@ body {
 
 .experience__content .description {
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 .projects {
@@ -564,10 +561,6 @@ body {
         top: 30px;
         height: 220px;
         width: 220px;
-    }
-    .experience__content .company {
-        width: 93%;
-        margin: 2% 0;
     }
     .projects__content .project {
         width: 47%;
