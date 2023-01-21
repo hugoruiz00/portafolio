@@ -360,14 +360,14 @@ body {
 
 .skills__content .side {
     background-color: #313030;
-    padding: 20px 10%;
-    height: 200px;
+    padding: 20px 8%;
+    height: 250px;
 }
 
 .skills__content .center {
     background: linear-gradient(#009175, #209e85);
-    padding: 20px 11%;
-    height: 270px;
+    padding: 20px 10%;
+    height: 285px;
 }
 
 .contact {
