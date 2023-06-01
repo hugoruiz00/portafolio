@@ -367,7 +367,7 @@ body {
 .skills__content .center {
     background: linear-gradient(#009175, #209e85);
     padding: 20px 10%;
-    height: 285px;
+    height: 315px;
 }
 
 .contact {
@@ -588,7 +588,7 @@ body {
     .skills__content .side {
         width: 33%;
         margin: 10px 0;
-        height: 280px;
+        height: 320px;
     }
     .contact__content {
         margin: 0 6%;
