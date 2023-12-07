@@ -225,6 +225,7 @@ body {
     text-align: center;
     color: #fff;
     font-size: 30px;
+    margin-bottom: 15px;
 }
 
 .projects__content {
@@ -234,20 +235,32 @@ body {
     text-align: center;
     line-height: 1.4;
     font-size: 17px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    gap: 1%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+        "measurea measurea measurea snipcenter snipcenter snipcenter snipcenter acontrol acontrol acontrol acontrol acontrol"
+        "chem-organizer chem-organizer chem-organizer contacts-qr contacts-qr contacts-qr pet-care pet-care pet-care pet-care pet-care pet-care"
+        "buscamina buscamina buscamina buscamina buscamina buscamina elihu elihu elihu elihu elihu elihu"
+        "clasificador-ia clasificador-ia clasificador-ia clasificador-ia sistema-rastreo sistema-rastreo sistema-rastreo sistema-rastreo gestor-bd gestor-bd gestor-bd gestor-bd";
 }
 
 .projects__content .project {
     padding: 0;
 }
 
-.projects__content .project img {
+.projects__content .project .name {
     width: 100%;
     max-width: 100%;
     height: 100%;
     transition-duration: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 .projects__content .project .details {
@@ -277,7 +290,7 @@ body {
     background-color: #009175;
 }
 
-.projects__content .project:hover img {
+.projects__content .project:hover .name {
     opacity: 0.1;
 }
 
@@ -288,31 +301,103 @@ body {
 }
 
 .projects__content .project {
-    margin: 1%;
     background-color: #313030;
     height: 400px;
+    transition-duration: 1s;
 }
 
-.projects__content .item-1,
-.projects__content .item-2 {
-    width: 18%;
+.projects__content .project {
+    background-color: #313030;
+    height: 400px;
+    transition-duration: 1s;
 }
 
-.projects__content .item-3 {
-    width: 58%;
+.projects__content .measurea {
+    grid-area: measurea;
 }
 
-.projects__content .item-4,
-.projects__content .item-5 {
-    height: 350px;
-    width: 48%;
+.projects__content .measurea .name{
+    background-color: #7524AC;
 }
 
-.projects__content .item-6,
-.projects__content .item-7,
-.projects__content .item-8 {
-    height: 350px;
-    width: 31.2%;
+.projects__content .snipcenter {
+    grid-area: snipcenter;
+}
+
+.projects__content .snipcenter .name{
+    background-color: #212940;
+}
+
+.projects__content .acontrol {
+    grid-area: acontrol;
+}
+
+.projects__content .acontrol .name{
+    background-color: #253B5F;
+}
+
+.projects__content .chem-organizer {
+    grid-area: chem-organizer;
+}
+
+.projects__content .chem-organizer .name{
+    background-color: #852D91;
+}
+
+.projects__content .contacts-qr {
+    grid-area: contacts-qr;
+}
+
+.projects__content .contacts-qr .name{
+    background-color: #1564C0;
+}
+
+.projects__content .pet-care {
+    grid-area: pet-care;
+}
+
+.projects__content .pet-care .name{
+    background-color: #3F3D56;
+}
+
+.projects__content .buscamina {
+    grid-area: buscamina;
+}
+
+.projects__content .buscamina .name{
+    background-color: #808080;
+}
+
+.projects__content .elihu {
+    grid-area: elihu;
+}
+
+.projects__content .elihu .name{
+    background-color: #314252;
+}
+
+.projects__content .clasificador-ia {
+    grid-area: clasificador-ia;
+}
+
+.projects__content .clasificador-ia .name{
+    background-color: #ACAFAF;
+}
+
+.projects__content .sistema-rastreo {
+    grid-area: sistema-rastreo;
+}
+
+.projects__content .sistema-rastreo .name{
+    background-color: #353A40;
+}
+
+.projects__content .gestor-bd {
+    grid-area: gestor-bd;
+}
+
+.projects__content .gestor-bd .name{
+    background-color: #2C44CC;
 }
 
 .skills {
@@ -501,16 +586,12 @@ body {
     .nav__links li {
         margin: 0 7px;
     }
+    .projects__content .project .name {
+        font-size: 35px;
+    }
 }
 
 @media screen and (max-width:1000px) {
-    .projects__content .item-1,
-    .projects__content .item-2 {
-        width: 25%;
-    }
-    .projects__content .item-3 {
-        width: 44%;
-    }
     .skills__content .side {
         padding: 20px 9%;
     }
@@ -562,8 +643,18 @@ body {
         height: 220px;
         width: 220px;
     }
+    .projects__content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3px;
+        grid-template-areas:
+            "measurea snipcenter"
+            "acontrol chem-organizer"
+            "contacts-qr pet-care"
+            "buscamina elihu"
+            "clasificador-ia sistema-rastreo"
+            "gestor-bd .";
+    }
     .projects__content .project {
-        width: 47%;
         height: 350px;
     }
     .skills__content .center,
@@ -578,6 +669,21 @@ body {
 }
 
 @media screen and (max-width:576px) {
+    .projects__content {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "measurea"
+            "snipcenter"
+            "acontrol"
+            "chem-organizer"
+            "contacts-qr"
+            "pet-care"
+            "buscamina" 
+            "elihu"
+            "clasificador-ia"
+            "sistema-rastreo"
+            "gestor-bd";
+    }
     .projects__content .project {
         width: 95%;
     }

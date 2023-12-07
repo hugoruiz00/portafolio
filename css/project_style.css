@@ -233,6 +233,31 @@ body {
     width: 60%;
 }
 
+/* Measurea style */
+
+.project_header .info .tecnologies_measurea p {
+    background-color: #7524AC;
+}
+
+.project_body .description .visualize_measurea {
+    background-color: #7524AC;
+}
+
+.project_body .description .visualize_measurea:hover {
+    background-color: #9837da;
+}
+
+/* Snipcenter style */
+
+.project_header .info .tecnologies_snipcenter p {
+    background-color: #212940;
+}
+
+/* AControl style */
+
+.project_header .info .tecnologies_control p {
+    background-color: #253B5F;
+}
 
 /*Responsive design*/
 
